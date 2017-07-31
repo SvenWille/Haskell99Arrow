@@ -1,0 +1,41 @@
+name:                Haskell99Arrow
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/SvenWille/Haskell99Arrow#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Sven Wille
+maintainer:          example@example.com
+copyright:           2017 Sven Wille
+category:            Other
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Haskell99Arrow,
+                       Haskell99Arrow.P01,
+                       Haskell99Arrow.P03,
+                       Haskell99Arrow.P06,
+                       Haskell99Arrow.P33
+  build-depends:       base >= 4.7 && < 5,
+                       utility-ht,
+                       hxt,
+                       mtl,
+                       QuickCheck
+  default-language:    Haskell2010
+
+test-suite Haskell99Arrow-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base,
+                       Haskell99Arrow
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/SvenWille/Haskell99Arrow
